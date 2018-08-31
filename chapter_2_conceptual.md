@@ -63,7 +63,42 @@
 
     a) Provide a sketch of typical (squared) bias, variance, training error, test error, and Bayes (irreducible) error curves, on a single plot, as we go from less flexible statistical learning methods towards more flexible approaches. The x-axis should represent the amount of flexibility in the method, and the y-axis should represent the values for each curve. There should be five curves. Make sure to label each one.
 
+        This one is just copying curves already in the book. I'll describe the nature below...
+
     b) Explain why each of the five curves has the shape displayed in part (a)
+
+        i. Bias:
+            This starts relatively high with the most inflexible models, and decreases with more flexible models.
+
+            As this is the error introduced by approximating a real-life problem, assuming simplicity will
+            have its cost on analysis and prediction. Real relationships are seldom linear.
+
+        ii. Variance:
+            This starts releatively low with the most inflexible models, and increases as flexibility increases.
+
+            Variance refers to the amount that our approximated model would change if we change the data it is
+            trained on.
+
+            Less flexible models are less likely to conform to different data, while more flexible
+            models are likely to take the shape of the data presented. This is especially true with smaller
+            sample sets.
+
+        iii. Training Error:
+            This starts at a middling amount, but trends monotonically downward as flexibility increases.
+
+            As we introduce more complexity into our model, we will conform more and more to the training set.
+            While this may seem good, the impact on Test Error is less desirable...
+
+        iv: Test Error:
+            This starts in roughly the same place as Training Error, decreases, then increases significantly
+            as the model grows more complex.
+
+            As the model conforms more and more to the training data it has seen, it will generalized worse
+            and worse to data it has not seen--negatively impacting the Test Error.
+
+        v: Irreducible Error:
+            This is an unchanging straight line. The nature of this error does not lie within the model,
+            but in the data as it has been collected.
 
 - - - -
 
@@ -71,17 +106,67 @@
 
     a) Describe three real-life applications in which classification might be useful. Describe the response, as well as the predictors. Is the goal of each application inference or prediction? Explain your answer.
 
+        - Classifying Spam email:
+            - Response:
+                Spam or Not Spam
+            - Predictors:
+                Number of specific keywords present in specific emails
+            - Goal:
+                Prediction -- we want to predict whether to allow mail into the inbox or to send it to spam
+
+        - Classifying Infectious Diseases based on symptoms present in patient:
+            - Response:
+                Which diseases are likely present
+            - Predictors:
+                Symptoms of patient. Qualitative and Quantitative.
+            - Goal:
+                Both prediction and inference.
+                As a prediction task, this can provide a second or third opinion to medical professionals.
+                As an inference task, this can teach us a lot about the relationships between symptoms and diseases.
+
+        - Classifying Species of Plant
+            - Response:
+                Species of certain plants
+            - Predictors:
+                Sepal lenght, width, whether it opens in the day or night, that kind of thing
+            - Goal:
+                Both prediction and inference. Honestly you can do both with most methods...and want to...
+
     b) Describe three real-life applications in which regression might be useful. Describe the response, as well as the predictors. Is the goal of each application inference or prediction? Explain your answer.
 
+        pass - not challenging
+
     c) Describe three real-life applications in which cluster analysis might be useful.
+
+        pass - not challenging
 
 - - - -
 
 5. What are the advantages and disadvantages of a very flexible (versus a less flexible) approach for regression or classification? Under what circumstances might a more flexible approach be preferred to a less flexible approach? When might a less flexible approach be preferred?
 
+    ```
+    Flexible pros:
+    - Low bias, can fit a variety of data sets really well, especially niche data
+    - Can get you closer to the best test accuracy, depending on the nature of the data
+
+    Flexible cons:
+    - Easy to overfit to data when using smaller datasets or the underlying nature is far simpler
+    - Much harder to interpret for inference
+
+    Best circumstances for Flexible:
+    - Data is very non-linear and plentiful
+    - Inference doesn't matter as much as prediction (i.e. predicting stock values)
+
+    Best circumstances for Inflexible:
+    - Data is fairly linear or sparse
+    - Inference is desirable, so an interpretable model would be better for the task
+    ```
+
 - - - -
 
-6. describe the differences between a parametric and a non-parametric statistical learning approach. What are the afnatages of a parametric approach to regression or classification (as opposed to a non-parametric approach)? What are its disadvantages?
+6. Describe the differences between a parametric and a non-parametric statistical learning approach. What are the advantages of a parametric approach to regression or classification (as opposed to a non-parametric approach)? What are its disadvantages?
+
+
 
 - - - -
 
