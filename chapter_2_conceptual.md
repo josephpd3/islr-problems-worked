@@ -45,8 +45,9 @@
 
     c) We are interested in predicting the % change in the US dollar in relation to the weekly changes in the world stock markets. Hence we collect weekly data for all of 2012. For each week we record the % change in the dollar, the % change in the US market, the % change in the British market, and the % change in the German market.
 
-        This is a regression problem. Our dependent variable, % change in the US dollar, is quantitative and continuous.
-        We are attempting to predict the % change present (its in the description...).
+        This is a regression problem. Our dependent variable, % change in the US dollar,
+        is quantitative and continuous. We are attempting to predict the % change present.
+        (its in the description...)
 
         n = 52; weeks in the year
         p = 3; % change in US, British, and German markets, respectively
